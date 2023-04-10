@@ -28,21 +28,19 @@ public class Main {
             System.out.print(i + " ");
         }
         System.out.println();
-        int a = 11;
-        while (a > 1){
-            a = a - 1;
-            System.out.print(a + " ");
+        for (i = 10; i > 0; i = i -1){
+            System.out.print(i + " ");
         }
         System.out.println();
     }
     public static void task3(){
         System.out.println("Задача 3");
         int size = 12_000_000;
-        int birthRate = size / 1000 * 17;
-        int mortality = size / 1000 * 8;
+        int birthRate = size / 1000 * (17 - 8);
         int year = 0;
         while (year < 10){
-            size = size + birthRate - mortality;
+            size = size + birthRate;
+            birthRate = size / 1000 * (17-8);
             year = year + 1;
             System.out.println("Год " + year + " , численность населения составляет " + size);
         }
@@ -97,7 +95,7 @@ public class Main {
         int year = 0;
         while (year < stopYear){
             year = year + frequency;
-            if(year >startYear && year < stopYear){
+            if(year > startYear){
                 System.out.println(year);
             }
         }
